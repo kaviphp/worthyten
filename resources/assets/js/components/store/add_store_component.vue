@@ -69,7 +69,7 @@
                         <textarea name="address" v-model="address" v-validate="'required|max:65535'" class="form-control form-control-custom" rows="5" :placeholder="$t('Enter store address')"></textarea>
                         <span v-bind:class="{ 'error' : errors.has('address') }">{{ errors.first('address') }}</span>
                     </div>
-                    <div class="form-group col-md-3">
+                    <div class="form-group col-md-3 d-none">
                         <label for="country">{{ $t("Country") }}</label>
                         <select name="country" v-model="country" v-validate="'required'" class="form-control form-control-custom custom-select">
                             <option value="">Choose Country..</option>
@@ -213,7 +213,7 @@
 
                 <div>
                     <div class="d-flex flex-wrap mb-1">
-                        <div class="mr-auto">
+                        <div class="mr-auto d-none">
                             <span class="text-subhead">{{ $t("Currency, Store wise Tax & Discount Information") }}</span>
                         </div>
                         <div class="">
@@ -222,7 +222,7 @@
                     </div>
 
                     <div class="form-row mb-2">
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-3 d-none">
                             <label for="currency_code">{{ $t("Currency") }}</label>
                             <select name="currency_code" v-model="currency_code" v-validate="'required'" class="form-control form-control-custom custom-select">
                                 <option value="">Choose Currency..</option>
@@ -512,7 +512,9 @@
             printers: [Array, Object],
         },
         mounted() {
-            console.log('Add store page loaded');
+            // Set default country to '98' (India)
+            this.country = '98';
+            this.currency_code = 'INR';
         },
         methods: {
             submit_form(){
