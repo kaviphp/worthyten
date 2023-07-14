@@ -41,12 +41,16 @@
                             </div>
                         </li>
 
-                        <li class="nav-item text-right pl-md-4 pl-lg-4 pl-xl-4">
-                            <a href="/search" class="nav-link nav-link-dark text-bold"><i class="fas fa-search search-icon"></i> {{ $t("Search") }}</a>
+                        <li class="nav-item text-right pl-md-4 pl-lg-4 pl-xl-4" v-if="new_order_access == true">
+                            <a href="/add_purchase_order" class="nav-link nav-link-dark text-bold">+ {{ $t("New Purchase Order") }}</a>
                         </li>
 
-                        <li class="nav-item text-right pl-md-4 pl-lg-4 pl-xl-4 d-none" v-if="new_order_access == true">
+                        <li class="nav-item text-right pl-md-4 pl-lg-4 pl-xl-4" v-if="new_order_access == true">
                             <a :href="new_order_link" class="nav-link nav-link-dark text-bold">+ {{ $t("New Order") }}</a>
+                        </li>
+
+                        <li class="nav-item text-right pl-md-4 pl-lg-4 pl-xl-4">
+                            <a href="/search" class="nav-link nav-link-dark text-bold"><i class="fas fa-search search-icon"></i> {{ $t("Search") }}</a>
                         </li>
 
                         <li class="nav-item text-right pl-md-4 pl-lg-4 pl-xl-4">

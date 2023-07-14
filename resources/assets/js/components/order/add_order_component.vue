@@ -124,6 +124,8 @@
                                 {{ cart_item.name }}
                             </span>
                             <input type="number" v-model="cart_item.quantity" v-on:input="validate_quantity(key, $event)" class="form-control form-control-custom cart-product-quantity mr-2 ml-3" autocomplete="off" min=0>
+                            x
+                            <input type="number" v-model="cart_item.price" v-on:input="validate_quantity(key, $event)" min="0" class="form-control ml-2" placeholder="Enter Price">
                         </div>
 
                         <div class="d-flex flex-row justify-content-between mr-2 cart-item-summary">
@@ -135,7 +137,10 @@
                             </div>
                             <div class="">
                                 <div class="d-flex flex-column">
-                                    <div class="text-right">{{ $t("Price") }}: {{ cart_item.quantity }} x {{ cart_item.price }}</div>
+                                    <div class="text-right">
+                                        {{ $t("Price") }}:
+                                        {{ cart_item.quantity }} x {{ cart_item.price }}
+                                    </div>
                                     <div class="text-right">{{ $t("Total") }}: {{ cart_item.total_price }}</div>
                                 </div>
                             </div>

@@ -46,7 +46,6 @@ class Order extends Controller
         $data['menu_key'] = 'MM_ORDERS';
         $data['sub_menu_key'] = 'SM_POS_ORDERS';
         check_access(array($data['menu_key'],$data['sub_menu_key']));
-        
         return view('order.orders', $data);
     }
 
