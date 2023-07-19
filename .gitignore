@@ -4,6 +4,7 @@
 /vendor
 /.vscode
 /node_modules
+/storage/*
 /storage/*.key
 /storage/app/backup
 /storage/cache_keys.json
