@@ -7,6 +7,7 @@
 /storage/*.key
 /storage/app/backup
 /storage/cache_keys.json
+public/storage/
 public/storage/*
 public/error_log
 
