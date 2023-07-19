@@ -78,6 +78,12 @@
                     <p>{{ phone }}</p>
                 </div>
             </div>
+            <div class="row d-none">
+                <div class="form-group col-md-6">
+                    <label for="updated_on">{{ $t("Terms & Conditions") }}</label>
+                    <p>{{ terms_and_conditions }}</p>
+                </div>
+            </div>
         </div>
     </div>
 </template>  
@@ -104,6 +110,7 @@
                 invoice_print_logo : (this.app_setting.length == 0)?'-':this.app_setting.invoice_print_logo_path,
                 navbar_logo      : (this.app_setting.length == 0)?'-':this.app_setting.navbar_logo_path,
                 favicon          : (this.app_setting.length == 0)?'-':this.app_setting.favicon_path,
+                terms_and_conditions  : (this.app_setting.length == 0)?'-':this.app_setting.terms_and_conditions,
                 name             : (this.customer.length == 0)?'-':this.customer.name,
                 email            : (this.customer.length == 0)?'-':this.customer.email,
                 phone            : (this.customer.length == 0)?'-':this.customer.phone,

@@ -122,7 +122,7 @@
                     
                 </div>
 
-                <div class="form-row mb-2">
+                <div class="form-row mb-2 d-none">
                     <div class="form-group col-md-3">
                         <label for="status">{{ $t("Status") }}</label>
                         <select name="status" v-model="status" v-validate="'required|numeric'" class="form-control form-control-custom custom-select">
@@ -575,7 +575,8 @@
             taxcode_inclusive: Boolean,
             taxcode_percentage: [String, Number]
         },
-        mounted() {
+        mounted() {            
+            this.status = 1;
             console.log('Add product page loaded');
         },
         created(){

@@ -97,7 +97,7 @@
                 <div class="p-0 border-bottom">
                     <div class="d-flex flex-wrap p-3 align-items-center">
                         <span class="mr-auto text-title text-black-50">{{ $t("Cart") }}</span>
-                        <button class="btn btn-outline-primary" v-on:click="show_customer_modal = true"><i class="fas fa-user-edit"></i> {{ $t("Customer") }}: {{ customer_label | truncate(26) }}</button>
+                        <button class="btn btn-outline-primary" v-on:click="show_customer_modal = true"><i class="fas fa-user-edit"></i> {{ $t("Customer") }} {{ customer_label | truncate(26) }}</button>
                     </div>
                 </div>
 
@@ -806,7 +806,7 @@
                 new_order_route  : this.new_order_link,
                 api_link        : (this.order_data == null)?'/api/add_order':'/api/update_order/'+this.order_data.slack,
                 close_register_api_link : '/api/close_register',
-                default_label   : 'Walkin Customer',
+                default_label   : '',
                 current_date_time : moment().format('MMM Do YYYY, h:mm:ss a'),
 
                 customer_label  : '-',

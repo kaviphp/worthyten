@@ -57,29 +57,31 @@
                         <span v-bind:class="{ 'error' : errors.has('pincode') }">{{ errors.first('pincode') }}</span>
                     </div>
                 </div>
-
-                <div class="d-flex flex-wrap mb-1">
-                    <div class="mr-auto">
-                        <span class="text-subhead">{{ $t("Status Information") }}</span>
+                
+                <div class="d-none">
+                    <div class="d-flex flex-wrap mb-1">
+                        <div class="mr-auto">
+                            <span class="text-subhead">{{ $t("Status Information") }}</span>
+                        </div>
+                        <div class="">
+                            
+                        </div>
                     </div>
-                    <div class="">
-                        
+
+                    <div class="form-row mb-2">
+                        <div class="form-group col-md-3">
+                            <label for="status">{{ $t("Status") }}</label>
+                            <select name="status" v-model="status" v-validate="'required|numeric'" class="form-control form-control-custom custom-select">
+                                <option value="">Choose Status..</option>
+                                <option v-for="(status, index) in statuses" v-bind:value="status.value" v-bind:key="index">
+                                    {{ status.label }}
+                                </option>
+                            </select>
+                            <span v-bind:class="{ 'error' : errors.has('status') }">{{ errors.first('status') }}</span> 
+                        </div>
                     </div>
                 </div>
-
-                <div class="form-row mb-2">
-                    <div class="form-group col-md-3">
-                        <label for="status">{{ $t("Status") }}</label>
-                        <select name="status" v-model="status" v-validate="'required|numeric'" class="form-control form-control-custom custom-select">
-                            <option value="">Choose Status..</option>
-                            <option v-for="(status, index) in statuses" v-bind:value="status.value" v-bind:key="index">
-                                {{ status.label }}
-                            </option>
-                        </select>
-                        <span v-bind:class="{ 'error' : errors.has('status') }">{{ errors.first('status') }}</span> 
-                    </div>
-                </div>
-
+                
             </form>
                 
         </div>
@@ -128,6 +130,7 @@
             supplier_data: [Array, Object]
         },
         mounted() {
+            this.status = 1;
             console.log('Add supplier page loaded');
         },
         methods: {

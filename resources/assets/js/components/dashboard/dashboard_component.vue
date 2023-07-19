@@ -790,52 +790,52 @@
                     this.stats_processing = false;
                     if(response.data.status_code == 200) {
 
-                        this.todays_order_count.raw = response.data.data.todays_order_count.count_raw;
+                        this.todays_order_count.raw = response.data.data.todays_order_count.count_raw.toLocaleString("en-IN");
                         this.todays_order_count.formatted = response.data.data.todays_order_count.count_formatted;
                         this.todays_order_count.difference = response.data.data.todays_order_count.difference;
 
-                        this.todays_order_value.raw = response.data.data.todays_order_value.count_raw;
+                        this.todays_order_value.raw = response.data.data.todays_order_value.count_raw.toLocaleString("en-IN");
                         this.todays_order_value.formatted = response.data.data.todays_order_value.count_formatted;
                         this.todays_order_value.difference = response.data.data.todays_order_value.difference;
 
-                        this.order_count.raw = response.data.data.order_count.count_raw;
+                        this.order_count.raw = response.data.data.order_count.count_raw.toLocaleString("en-IN");
                         this.order_count.formatted = response.data.data.order_count.count_formatted;
 
-                        this.order_value.raw = response.data.data.order_value.count_raw;
+                        this.order_value.raw = response.data.data.order_value.count_raw.toLocaleString("en-IN");
                         this.order_value.formatted = response.data.data.order_value.count_formatted;
 
-                        this.order_count.raw = response.data.data.order_count.count_raw;
+                        this.order_count.raw = response.data.data.order_count.count_raw.toLocaleString("en-IN");
                         this.order_count.formatted = response.data.data.order_count.count_formatted;
 
-                        this.revenue_value.raw = response.data.data.revenue_value.count_raw;
+                        this.revenue_value.raw = response.data.data.revenue_value.count_raw.toLocaleString("en-IN");
                         this.revenue_value.formatted = response.data.data.revenue_value.count_formatted;
 
-                        this.customer_count.raw = response.data.data.customer_count.count_raw;
+                        this.customer_count.raw = response.data.data.customer_count.count_raw.toLocaleString("en-IN");
                         this.customer_count.formatted = response.data.data.customer_count.count_formatted;
 
-                        this.expense.raw = response.data.data.expense.count_raw;
+                        this.expense.raw = response.data.data.expense.count_raw.toLocaleString("en-IN");
                         this.expense.formatted = response.data.data.expense.count_formatted;
 
-                        this.net_profit_value.raw = response.data.data.net_profit_value.count_raw;
+                        this.net_profit_value.raw = response.data.data.net_profit_value.count_raw.toLocaleString("en-IN");
                         this.net_profit_value.formatted = response.data.data.net_profit_value.count_formatted;
 
-                        this.purchase_order_count.raw = response.data.data.purchase_order_count.count_raw;
+                        this.purchase_order_count.raw = response.data.data.purchase_order_count.count_raw.toLocaleString("en-IN");
                         this.purchase_order_count.formatted = response.data.data.purchase_order_count.count_formatted;
 
                         this.invoices_count.raw = response.data.data.invoices_count.count_raw;
                         this.invoices_count.formatted = response.data.data.invoices_count.count_formatted;
 
                         //stats
-                        this.target.income = response.data.data.targets.income;
+                        this.target.income = response.data.data.targets.income.toLocaleString("en-IN");
                         this.target.income_width = ((response.data.data.revenue_value.count_raw/response.data.data.targets.income)*100)+'%';
 
-                        this.target.expense = response.data.data.targets.expense;
+                        this.target.expense = response.data.data.targets.expense.toLocaleString("en-IN");
                         this.target.expense_width = ((response.data.data.expense.count_raw/response.data.data.targets.expense)*100)+'%';
 
-                        this.target.sales = response.data.data.targets.sales;
+                        this.target.sales = response.data.data.targets.sales.toLocaleString("en-IN");
                         this.target.sales_width = ((response.data.data.order_value.count_raw/response.data.data.targets.sales)*100)+'%';
 
-                        this.target.net_profit = response.data.data.targets.net_profit;
+                        this.target.net_profit = response.data.data.targets.net_profit.toLocaleString("en-IN");
                         this.target.net_profit_width = ((response.data.data.net_profit_value.count_raw/response.data.data.targets.net_profit)*100)+'%';
 
                         var today_sales_count_chart = this.create_chart('today_sales_count_chart', this.todays_sales_count_chart_config);

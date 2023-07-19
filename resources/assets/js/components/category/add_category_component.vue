@@ -42,7 +42,7 @@
                         </select>
                         <span v-bind:class="{ 'error' : errors.has('display_on_qr_menu') }">{{ errors.first('display_on_qr_menu') }}</span>  
                     </div>
-                    <div class="form-group col-md-3">
+                    <div class="form-group col-md-3 d-none">
                         <label for="status">{{ $t("Status") }}</label>
                         <select name="status" v-model="status" v-validate="'required|numeric'" class="form-control form-control-custom custom-select">
                             <option value="">Choose Status..</option>
@@ -118,7 +118,8 @@
             statuses: Array,
             category_data: [Array, Object]
         },
-        mounted() {
+        mounted() {            
+            this.status = 1;
             console.log('Add category page loaded');
         },
         methods: {

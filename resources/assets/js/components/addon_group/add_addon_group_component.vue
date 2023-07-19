@@ -22,7 +22,7 @@
                         <input type="text" name="addon_group_name" v-model="addon_group_name" v-validate="'required|max:250'" class="form-control form-control-custom" :placeholder="$t('Please enter add-on group name')"  autocomplete="off">
                         <span v-bind:class="{ 'error' : errors.has('addon_group_name') }">{{ errors.first('addon_group_name') }}</span> 
                     </div>
-                    <div class="form-group col-md-3">
+                    <div class="form-group col-md-3 d-none">
                         <label for="status">{{ $t("Status") }}</label>
                         <select name="status" v-model="status" v-validate="'required|numeric'" class="form-control form-control-custom custom-select">
                             <option value="">Choose Status..</option>
@@ -149,6 +149,7 @@
             addon_group_data: [Array, Object]
         },
         mounted() {
+            this.status = 1;
             console.log('Add add-on group page loaded');
         },
         created(){

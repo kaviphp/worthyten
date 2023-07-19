@@ -152,6 +152,14 @@
                     </div>
                 </div>
 
+                <div class="row d-none">
+                    <div class="form-group col-md-3">
+                        <label for="terms_and_conditions">{{ $t("Terms & Condition.") }}</label>
+                        <textarea name="terms_and_conditions" v-model="terms_and_conditions" v-validate="'max:65535'" class="form-control form-control-custom" rows="5" :placeholder="$t('Enter Terms & Condition')"></textarea>
+                        <span v-bind:class="{ 'error' : errors.has('terms_and_conditions') }">{{ errors.first('terms_and_conditions') }}</span> 
+                    </div>
+                </div>
+
                 <hr>
 
                 <div class="d-flex flex-wrap mb-1">
@@ -253,6 +261,7 @@
                 navbar_logo     : (this.setting_data.length == 0)?'-':this.setting_data.navbar_logo_path,
                 navbar_logo_exists : (this.setting_data.length == 0)?false:((this.setting_data.navbar_logo != '' && this.setting_data.navbar_logo != null)?true:false),
                 favicon     : (this.setting_data.length == 0)?'-':this.setting_data.favicon_path,
+                terms_and_conditions    : (this.setting_data.length == 0)?'':this.setting_data.terms_and_conditions,
                 favicon_exists : (this.setting_data.length == 0)?false:((this.setting_data.favicon != '' && this.setting_data.favicon != null)?true:false),
 
                 clear_cache_processing : false,
@@ -299,6 +308,7 @@
                             
                             formData.append("access_token", window.settings.access_token);
                             formData.append("company_name", (this.company_name == null)?'':this.company_name);
+                            formData.append("terms_and_conditions", (this.terms_and_conditions == null)?'':this.terms_and_conditions);
                             formData.append("app_title", (this.app_title == null)?'':this.app_title);
                             formData.append("timezone", (this.app_timezone == null)?'':this.app_timezone);
                             formData.append("date_time_format", (this.app_date_time_format == null)?'':this.app_date_time_format);
@@ -312,7 +322,6 @@
                             formData.append("phone", this.phone);
 
                             axios.post(this.api_link, formData).then((response) => {
-                                
                                 if(response.data.status_code == 200) {
                                     this.show_response_message(response.data.msg, 'Success');
                                 

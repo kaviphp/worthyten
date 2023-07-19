@@ -121,7 +121,7 @@ class Setting extends Controller
                 "status" => $request->status,
                 "updated_by" => $request->logged_user_id
             ];
-
+            
             $action_response = SettingEmailModel::where('slack', $slack)
             ->update($email_setting);
 
@@ -280,9 +280,10 @@ class Setting extends Controller
                 "invoice_print_logo" => $invoice_print_logo_file,
                 "navbar_logo" => $navbar_logo_file,
                 "favicon" => $favicon_file,
+                'terms_and_conditions' => $request->terms_and_conditions,
                 "updated_by" => $request->logged_user_id
             ];
-
+            
             $action_response = SettingAppModel::create($app_setting)->id;
 
             file_put_contents("timezone_config.txt", $request->timezone);

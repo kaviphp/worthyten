@@ -9,7 +9,7 @@ class SettingApp extends Model
 {
     protected $table = 'setting_app';
     protected $hidden = [];
-    protected $fillable = ['company_name', 'app_title', 'timezone', 'app_date_time_format', 'app_date_format', 'company_logo', 'invoice_print_logo', 'navbar_logo', 'favicon', 'updated_by'];
+    protected $fillable = ['company_name', 'app_title', 'timezone', 'app_date_time_format', 'app_date_format', 'company_logo', 'invoice_print_logo', 'navbar_logo', 'favicon', 'terms_and_conditions', 'updated_by'];
 
 
     /* For view files */
